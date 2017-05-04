@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <conio.h>
+#define NCHAR 256
+#include <string.h>
+
+int main()
+{
+    int i;
+    char frase[NCHAR];
+    char cifra[NCHAR];
+    printf ("Entre com uma frase: \n");
+    fgets(frase, NCHAR, stdin);
+    frase [strlen (frase)-1]= '\0';
+
+    for(i = 0; i < NCHAR; i++){
+    if (isalpha(frase[i])) {
+        if ((frase[i] >=65 && frase[i] <78)
+        || (frase[i] >=97 && frase[i] <110))
+            cifra[i] = frase[i] + 13;
+    else
+        cifra[i] = frase[i] - 13;
+    }
+    else
+        cifra[i] = frase[i];
+}
+ printf("Mensagem : \n %s", cifra);
+ return 0;}
+
+
+
+
+
+
+
+
